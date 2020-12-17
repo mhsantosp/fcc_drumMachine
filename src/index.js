@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import DrumMachine from './Components/DrumMachine';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <DrumMachine />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("drum-machine")
 );
 
 // If you want to start measuring performance in your app, pass a function
