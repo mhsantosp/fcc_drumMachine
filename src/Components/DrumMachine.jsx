@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import './DrumMachine.scss';
 
 const sounds = [
@@ -40,16 +40,18 @@ const sounds = [
   }
 ];
 
-const App = () => (
-  <div id="display" className="display">
-    <h1>"x" sonido</h1>
-    {sounds.map((sound, idx) => (
-      <DrumPad text={sound.key} key={idx} audio={sound.mp3} />
-    ))}
-  </div>
-);
+function App() {
+  return (
+    <div id="display" className="display">
+      <h1>'x' sonido</h1>
+      {sounds.map((sound, idx) => (
+        <DrumPad text={sound.key} key={idx} audio={sound.mp3} />
+      ))}
+    </div>
+  )
+}
 
-export default class DrumPad extends Component {
+class DrumPad extends React.Component{
   constructor(props) {
     super(props);
 
@@ -72,7 +74,7 @@ export default class DrumPad extends Component {
     parent.classList.add("active");
 
     const display = parent.parentNode;
-    display.querySelector("h1").innerText = `${id} este es su sonido`;
+    display.querySelector("h1").innerText = `'${id}' este es su sonido`;
   };
 
   render() {
@@ -96,10 +98,12 @@ document.addEventListener("keydown", (e) => {
     parent.classList.add("active");
 
     const display = parent.parentNode;
-    display.querySelector("h1").innerText = `${id} este es su sonido`;
+    display.querySelector("h1").innerText = `'${id}' este es su sonido`;
 
     audio.play();
   }
 });
+
+export default App;
 
 // ReactDOM.render(<App />, document.getElementById("drum-machine"));

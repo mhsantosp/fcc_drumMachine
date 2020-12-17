@@ -44,11 +44,8 @@ body {
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
       }
 
-      .drum-pad:hover {
+      .drum-pad:hover, .drum-pad.active {
         background-color: #2c3a47;
-      }
-      .drum-pad.active {
-        opacity: 0.8;
       }
     }
   }
